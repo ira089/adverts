@@ -2,7 +2,7 @@ import React from 'react'
 
  const CatalogItem = () => {
   return (
-    <div>CatalogItem</div>
+    <li>CatalogItem</li>
   )
 }
 
