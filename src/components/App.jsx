@@ -15,19 +15,20 @@ import NotFoundPage from 'Pages/NotFoundPage/NotFoundPage';
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
-        <Route path="/catalog" element={<CatalogPage />} >
-          </Route>
-          <Route path="/favorites" element={<FavoritesPage />} />
-        {/* <Route path="/movies/:id" element={<MovieDetails />}>
-          <Route path="cast" element={<CastPage />} />
-          <Route path="reviews" element={<ReviewsPage />} />
-        </Route> */}
-        <Route path="*" element={<NotFoundPage />} />
-      </Route>
-    </Routes>
+    <h1>dfg</h1>
+    // <Routes>
+    //   <Route path="/" element={<Layout />}>
+    //     <Route index element={<HomePage />} />
+    //     <Route path="/catalog" element={<CatalogPage />} >
+    //       </Route>
+    //       <Route path="/favorites" element={<FavoritesPage />} />
+    //     {/* <Route path="/movies/:id" element={<MovieDetails />}>
+    //       <Route path="cast" element={<CastPage />} />
+    //       <Route path="reviews" element={<ReviewsPage />} />
+    //     </Route> */}
+    //     <Route path="*" element={<NotFoundPage />} />
+    //   </Route>
+    // </Routes>
   );
 };
 
