@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 // import { lazy } from 'react';
 import React from 'react';
-import HomePage from '../Pages/HomePage/HomePage';
+import Home from '../Pages/HomePage/Home';
 import  Layout  from '../Pages/Layout/Layout';
 import CatalogPage from 'Pages/CatalogPage/CatalogPage';
 import FavoritesPage from 'Pages/FavoritesPage/FavoritesPage';
@@ -18,7 +18,7 @@ const App = () => {
     
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
+        <Route index element={<Home />} />
         <Route path="/catalog" element={<CatalogPage />} >
           </Route>
           <Route path="/favorites" element={<FavoritesPage />} />
