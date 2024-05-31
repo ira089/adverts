@@ -15,7 +15,7 @@ import NotFoundPage from 'Pages/NotFoundPage/NotFoundPage';
 
 const App = () => {
   return (
-    // <h1>dfg</h1>
+    
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
