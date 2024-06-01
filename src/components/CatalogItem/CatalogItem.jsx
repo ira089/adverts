@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from 'components/Button/Button';
+import Modal from 'components/Modal/Modal';
+import CamperModal from '../Modal/CamperModal'
 import styles from './catalogItem.module.css';
 import { FaRegHeart } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
@@ -24,14 +26,26 @@ import { LuFuel } from "react-icons/lu";
 
 
  const CatalogItem = ({item}) => {
+    // const [showModal, setShowModal] = useState(false);
+    // const toggleModal = () => setShowModal(prevShowModal => !prevShowModal)
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
  const {adults, _id, details, gallery, description,
   location, name, price, rating, reviews, transmission, engine} = item;
  const image = gallery[0];
 //  console.log(gallery)
 //  console.log(image);
- console.log(details)
+//  console.log(details)
   return (
-    <li key={_id} id={_id} className={styles.wrapItem}>
+    <>
+     <li key={_id} id={_id} className={styles.wrapItem}>
        <img src={image} alt={name} className={styles.img}/>
     <div className={styles.wrapText}>
       {/* весь текст */}
@@ -69,11 +83,17 @@ import { LuFuel } from "react-icons/lu";
                  <LuFuel />  <span>{engine}</span>
             </li>
         </ul>
-        <Button>Show more</Button>
+        <Button  onClick={openModal}>Show more</Button>
 
     </div>
 
     </li>
+    {/* {showModal && (<Modal showModal={setShowModal} onClose={() => showModal(false)}/>)} */}
+    <Modal isOpen={isModalOpen} onClose={closeModal}>
+       <CamperModal/>
+      </Modal>
+    </>
+   
   )
 }
 
