@@ -20,10 +20,9 @@ console.log(items)
 
   const elements = items.map(item => (
     <CatalogItem
-      // key={item.id}
-      // id={item.id}
-      // number={item.number}
-      // name={item.name}
+      key={item._id}
+      item={item}
+      
     />
   ));
 
