@@ -28,7 +28,7 @@ import { LuFuel } from "react-icons/lu";
   location, name, price, rating, reviews, transmission, engine} = item;
  const image = gallery[0];
 //  console.log(gallery)
- console.log(image);
+//  console.log(image);
  console.log(details)
   return (
     <li key={_id} id={_id} className={styles.wrapItem}>
@@ -40,7 +40,7 @@ import { LuFuel } from "react-icons/lu";
             <div className={styles.title}>
                 <h2>{name}</h2> 
                 <div className={styles.wrapPrice}>
-                    <h2>{price}</h2>
+                    <h2>{price}.00</h2>
                     <button type='submit'>
                     <FaRegHeart />
                     </button>       
