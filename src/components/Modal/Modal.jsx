@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { RxCross2 } from "react-icons/rx";
+// import { RxCross2 } from "react-icons/rx";
 import styles from './modal.module.css';
 // import { Opacity, Modalcont, ModalClose } from './Modal.styled';
 
@@ -30,9 +30,9 @@ import styles from './modal.module.css';
         // $Height={height}
         // onClick={event => event.stopPropagation()}
       >
-        <button className={styles.modalClose} type="button" aria-label="Close modal" onClick={onClose}>
+        {/* <button className={styles.modalClose} type="button" aria-label="Close modal" onClick={onClose}>
         <RxCross2 />
-        </button>
+        </button> */}
         {children}
       </div>
     </div>,

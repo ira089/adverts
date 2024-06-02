@@ -49,7 +49,7 @@ import { LuFuel } from "react-icons/lu";
             <div className={styles.title}>
                 <h2>{name}</h2> 
                 <div className={styles.wrapPrice}>
-                    <h2>{price}.00</h2>
+                    <h2>{price},00</h2>
                     <button type='submit'>
                     <FaRegHeart />
                     </button>       
@@ -84,8 +84,9 @@ import { LuFuel } from "react-icons/lu";
 
     </li>
     {/* {showModal && (<Modal showModal={setShowModal} onClose={() => showModal(false)}/>)} */}
-    <Modal isOpen={isModalOpen} onClose={closeModal}>
-       <CamperModal/>
+    <Modal isOpen={isModalOpen}
+     onClose={closeModal}>
+       <CamperModal item={item} onClose={closeModal}/>
       </Modal>
     </>
    

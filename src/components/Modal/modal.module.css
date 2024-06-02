@@ -26,26 +26,19 @@
     border: 2px solid green;
     /* bottom:  24px; */
     /* right: 238px; */
+    top: 330px;
+    left: 700px;
     padding: 40px;
     border-radius: 20px;
     /* width: 982px;
     height: 720px; */
-    /* max-width: 500px; */
-  /* width: 100%; */
+    max-width: 982px;
+  width: 100%;
     background: #fff;
     transform: translate(-50%, -50%);
     /* z-index: 10000 */
+    max-height: 90%;
+    overflow: auto;
+    margin: auto;
 }
 
-.modalClose {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    background: none;
-  /* border: none; */
-  border: 1px solid red;
-  font-size: 24px;
-  cursor: pointer;
-    /* background-color: transparent;
-    padding: 0;   */
-}
