@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button from 'components/Button/Button';
 import Modal from 'components/Modal/Modal';
-import CamperModal from '../Modal/CamperModal'
+import CamperModal from '../CamperModal/CamperModal'
 import styles from './catalogItem.module.css';
 import { FaRegHeart } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
@@ -19,11 +19,6 @@ import { LuFuel } from "react-icons/lu";
 // <LuTv />
 // import { LuShowerHead } from "react-icons/lu";
 // <LuShowerHead />
-
-
-
-
-
 
  const CatalogItem = ({item}) => {
     // const [showModal, setShowModal] = useState(false);
