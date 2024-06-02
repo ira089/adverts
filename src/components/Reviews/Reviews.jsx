@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+import ReviewDetails from '../Reviewetails/ReviewDetails';
+import FormaBook from '../FormaBook/FormaBook';
+import styles from './reviews.module.css';
 
  const Reviews = ({item}) => {
   console.log(item)
@@ -6,7 +9,10 @@ import React from 'react'
   //   location, name, price, rating, reviews, transmission, engine} = item;
   
   return (
-    <div>Reviews</div>
+    <div className={styles.wrap}>
+      <ReviewDetails item={item}/>
+      <FormaBook/>
+    </div>
   )
 }
 

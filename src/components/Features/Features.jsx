@@ -1,12 +1,16 @@
 import React from 'react'
+import FeatureDetails from '../FeatureDetails/FeatureDetails';
+import FormaBook from '../FormaBook/FormaBook';
+import styles from '../Reviews/reviews.module.css';
+
 
  const Features = ({item}) => {
-  console.log(item)
-  // const {adults, id, details, gallery, description,
-  //   location, name, price, rating, reviews, transmission, engine} = item;
   
   return (
-    <div>Features</div>
+    <div className={styles.wrap}>
+      <FeatureDetails item={item}/>
+      <FormaBook/>
+    </div>
   )
 }
 

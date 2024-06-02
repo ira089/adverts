@@ -6,18 +6,14 @@ import Button from 'components/Button/Button';
 import Modal from 'components/Modal/Modal';
 import CamperModal from '../CamperModal/CamperModal'
 import styles from './catalogItem.module.css';
-import { FaRegHeart } from "react-icons/fa";
+import { FaRegHeart, FaWind } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
 import { FaStar, FaHeart } from "react-icons/fa6";
 import { BsPeople } from "react-icons/bs";
-import { TbAutomaticGearbox } from "react-icons/tb";
+import { TbAutomaticGearbox, TbToolsKitchen2 } from "react-icons/tb";
 import { LuFuel } from "react-icons/lu"; 
-// import { TbToolsKitchen2 } from "react-icons/tb";
-// <TbToolsKitchen2 />
-// import { IoBedOutline } from "react-icons/io5";
-// <IoBedOutline />
-// import { FaWind } from "react-icons/fa";cond
-// <FaWind />
+import { IoBedOutline } from "react-icons/io5";
+
 // import { LuTv } from "react-icons/lu";
 // <LuTv />
 // import { LuShowerHead } from "react-icons/lu";
@@ -36,20 +32,21 @@ import { LuFuel } from "react-icons/lu";
   };
 
   const dispatch = useDispatch();
-  const [isActive, setIsActive] = useState(false);
-  const handleClick = () => {
-    setIsActive(!isActive);
-    if (!item.favorite){
-      const toggleItem = {...item, favorite: true}
-      dispatch(camperOperations.toggleFavoritesThunk(toggleItem))
-    }else {}
-    
+  // const [isActive, setIsActive] = useState(false);
+  // const handleClick = () => {
+  //   setIsActive(!isActive);
+  //   if (!item.favorite){
+  //     const toggleItem = {...item, favorite: true}
+  //     dispatch(camperOperations.toggleFavoritesThunk(toggleItem))
+  //   }else {} 
+  // };
 
-    
-  };
+  const handleClick = () =>  dispatch(camperOperations.toggleFavoritesThunk(item))
+
+  
 
  const {adults, id, details, gallery, description,
-  location, name, price, rating, reviews, transmission, engine} = item;
+  location, name, price, rating, reviews, transmission, engine, favorite} = item;
  const image = gallery[0];
 //  console.log(gallery)
 //  console.log(image);
@@ -67,7 +64,7 @@ import { LuFuel } from "react-icons/lu";
                 <div className={styles.wrapPrice}>
                     <h2>{price},00</h2>
                     <button className={styles.btnHeart}  onClick={handleClick} type='submit'>
-                    {isActive ?  <FaHeart className={styles.heartActive}/> :  <FaRegHeart className={styles.heart}/>}
+                    {favorite ?  <FaHeart className={styles.heartActive}/> :  <FaRegHeart className={styles.heart}/>}
                     </button>       
                 </div>
 
@@ -92,6 +89,15 @@ import { LuFuel } from "react-icons/lu";
             </li>
             <li>
                  <LuFuel />  <span>{engine}</span>
+            </li>
+            <li>
+                <TbToolsKitchen2 />  <span>Kitchen</span>
+            </li>
+            <li>
+                 <IoBedOutline />  <span>{details.beds} beds</span>
+            </li>
+            <li>
+                 <FaWind />  <span>AC</span>
             </li>
         </ul>
         <Button  onClick={openModal}>Show more</Button>

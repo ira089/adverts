@@ -21,8 +21,10 @@ export const fetchCampersAll = async () => {
 
 export const fetchCCampersToggle = async ( body) => {
   // console.log(body)
-  const { data } = await axios.put(`${BASE_URL}/adverts/${body.id}`, body);
+  const { data } = await axios.put(`${BASE_URL}/adverts/${body.id}`, {
+    favorite: !body.favorite,
+  });
    
-  console.log(data);
+  // console.log(data);
   return data;
 };
