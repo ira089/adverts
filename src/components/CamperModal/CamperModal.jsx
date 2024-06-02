@@ -46,9 +46,9 @@ const { gallery, description,location, name, price, rating, reviews} = item;
           <img src={gallery[2]} alt={name} className={styles.img}/>
         </div>
         <p className={styles.description}>{description}</p>
-        <div className={styles.featuresReviews}>
-          <button onClick={() => handleTabClick('tabFeatures')}>Features</button>
-          <button onClick={() => handleTabClick('tabReviews')}>Reviews</button>
+        <div className={styles.wrapTab}>
+          <button className={styles.tab} onClick={() => handleTabClick('tabFeatures')}>Features</button>
+          <button className={styles.tab} onClick={() => handleTabClick('tabReviews')}>Reviews</button>
         </div>
         {activeTab === 'tabFeatures' && <div><Features item={item}/></div>}
         {activeTab === 'tabReviews' && <div><Reviews item={item}/></div>}

@@ -37,7 +37,7 @@ import { LuFuel } from "react-icons/lu";
  const image = gallery[0];
 //  console.log(gallery)
 //  console.log(image);
-//  console.log(details)
+ console.log(details)
   return (
     <>
      <li key={_id} id={_id} className={styles.wrapItem}>
