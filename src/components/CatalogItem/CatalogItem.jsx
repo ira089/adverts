@@ -5,7 +5,7 @@ import CamperModal from '../CamperModal/CamperModal'
 import styles from './catalogItem.module.css';
 import { FaRegHeart } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
-import { FaStar } from "react-icons/fa6";
+import { FaStar, FaHeart } from "react-icons/fa6";
 import { BsPeople } from "react-icons/bs";
 import { TbAutomaticGearbox } from "react-icons/tb";
 import { LuFuel } from "react-icons/lu"; 
@@ -23,15 +23,19 @@ import { LuFuel } from "react-icons/lu";
  const CatalogItem = ({item}) => {
     // const [showModal, setShowModal] = useState(false);
     // const toggleModal = () => setShowModal(prevShowModal => !prevShowModal)
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => {
     setIsModalOpen(true);
   };
-
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+  const [isActive, setIsActive] = useState(false);
+  const handleClick = () => {
+    setIsActive(!isActive);
+  };
+
  const {adults, _id, details, gallery, description,
   location, name, price, rating, reviews, transmission, engine} = item;
  const image = gallery[0];
@@ -50,8 +54,8 @@ import { LuFuel } from "react-icons/lu";
                 <h2>{name}</h2> 
                 <div className={styles.wrapPrice}>
                     <h2>{price},00</h2>
-                    <button type='submit'>
-                    <FaRegHeart />
+                    <button className={styles.btnHeart}  onClick={handleClick} type='submit'>
+                    {isActive ?  <FaHeart className={styles.heartActive}/> :  <FaRegHeart className={styles.heart}/>}
                     </button>       
                 </div>
 
