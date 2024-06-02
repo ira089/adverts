@@ -12,3 +12,15 @@ export const getCampersThunk = createAsyncThunk(
       }
     }
   );
+
+  export const toggleFavoritesThunk = createAsyncThunk(
+    'campers/toggle',
+    async (camper, thunkAPI) => {
+      try {
+        const camperToggle = campersApi.fetchCCampersToggle(camper);
+        return camperToggle;
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error.message);
+      }
+    }
+  );

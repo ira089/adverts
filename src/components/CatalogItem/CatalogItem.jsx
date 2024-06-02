@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { useDispatch } from "react-redux";
+// import * as camperSelectors from '../../redux/camperSelectors';
+import * as camperOperations from '../../redux/camperOperations';
 import Button from 'components/Button/Button';
 import Modal from 'components/Modal/Modal';
 import CamperModal from '../CamperModal/CamperModal'
@@ -21,6 +24,7 @@ import { LuFuel } from "react-icons/lu";
 // <LuShowerHead />
 
  const CatalogItem = ({item}) => {
+  // console.log(item)
     // const [showModal, setShowModal] = useState(false);
     // const toggleModal = () => setShowModal(prevShowModal => !prevShowModal)
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,20 +35,28 @@ import { LuFuel } from "react-icons/lu";
     setIsModalOpen(false);
   };
 
+  const dispatch = useDispatch();
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => {
     setIsActive(!isActive);
+    if (!item.favorite){
+      const toggleItem = {...item, favorite: true}
+      dispatch(camperOperations.toggleFavoritesThunk(toggleItem))
+    }else {}
+    
+
+    
   };
 
- const {adults, _id, details, gallery, description,
+ const {adults, id, details, gallery, description,
   location, name, price, rating, reviews, transmission, engine} = item;
  const image = gallery[0];
 //  console.log(gallery)
 //  console.log(image);
- console.log(details)
+//  console.log(details)
   return (
     <>
-     <li key={_id} id={_id} className={styles.wrapItem}>
+     <li key={id} id={id} className={styles.wrapItem}>
        <img src={image} alt={name} className={styles.img}/>
     <div className={styles.wrapText}>
       {/* весь текст */}

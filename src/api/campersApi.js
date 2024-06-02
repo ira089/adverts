@@ -19,8 +19,10 @@ export const fetchCampersAll = async () => {
 //   return data;
 // };
 
-// export const fetchCCampersChange = async (id, body) => {
-//   const { data } = await axios.patch(`${BASE_URL}/adverts/${id}`, body);
-//   // console.log(data);
-//   return data;
-// };
+export const fetchCCampersToggle = async ( body) => {
+  // console.log(body)
+  const { data } = await axios.put(`${BASE_URL}/adverts/${body.id}`, body);
+   
+  console.log(data);
+  return data;
+};

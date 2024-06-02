@@ -1,55 +1,45 @@
-
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 import * as camperSelectors from '../../redux/camperSelectors';
-import * as camperOperations from '../../redux/camperOperations';
-import styles from './CatalogList.module.css';
+// import * as camperOperations from '../../redux/camperOperations';
+import styles from '../CatalogList/CatalogList.module.css';
 import CatalogItem from '../CatalogItem/CatalogItem';
 import Button from 'components/Button/Button';
 
- const CatalogList = () => {
+ const FavoriteCatalog = () => {
   const itemsPerPage = 4
 
-  const dispatch = useDispatch();
-  
+//   const dispatch = useDispatch();
 
   const { isLoading, error, items } = useSelector(camperSelectors.selectCampers);
 // console.log(items)
-  
+
+
+//   console.log(itemsFavorite)
 
   const [page, setPage] = useState(1)
   const [allItemsLoaded, setAllItemsLoaded] = useState(false)
-  const [paginatedItems, setPaginatedItems] = useState([])
- 
-  // console.log(paginatedItems) 
+  const [paginatedItems, setPaginatedItems] = useState([]) 
+  const [itemsFavorite, setItemsFavorite] = useState([]) 
 
   useEffect(() => {
-    dispatch(camperOperations.getCampersThunk());
-   
-  }, [dispatch]);
+setItemsFavorite(items.filter(el => el.favorite))
 
+    // const itemsFavorite = items.filter(el => el.favorite)
+  }, [items]);
 
   
-
   useEffect(() => {
-    
-    setPaginatedItems(items.slice(0, page * itemsPerPage))
-  
-  }, [page,items])
-  
+    setPaginatedItems(itemsFavorite.slice(0, page * itemsPerPage))
+  }, [page,itemsFavorite])
 
   const onAddCamper = () => {
-    const allLoaded = items.length <= page * itemsPerPage
-
+    const allLoaded = itemsFavorite.length <= page * itemsPerPage
     setAllItemsLoaded(allLoaded)
-
     if (!allLoaded) {
       setPage(page + 1)
     }
-    
   }
-
-  
 
   const elements = paginatedItems.map(item => (
     <CatalogItem
@@ -73,4 +63,4 @@ import Button from 'components/Button/Button';
   )
 }
 
-export default CatalogList
+export default FavoriteCatalog
