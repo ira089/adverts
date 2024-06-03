@@ -19,6 +19,8 @@ background: #fff;
     border-radius: 10px;
     width: 290px;
     height: 310px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .title {

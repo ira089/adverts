@@ -5,13 +5,8 @@
 }
 
 .modalClose {
-    /* position: absolute; */
-    /* top: 14px;
-    right: 14px; */
     background: none;
-  /* border: none; */
-  border: 1px solid red;
-  /* font-size: 24px; */
+  border: none;
   width: 32px;
   height: 32px;
   cursor: pointer;
@@ -34,6 +29,8 @@
     border-radius: 10px;
     width: 290px;
     height: 310px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .description {
@@ -54,12 +51,11 @@
 .tab {
     border: none;
     background-color: transparent;
-   
-font-weight: 600;
-font-size: 20px;
-line-height: 120%;
-color: #101828;
-position: relative;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    color: #101828;
+    position: relative;
 }
 
   .tab:hover::after {

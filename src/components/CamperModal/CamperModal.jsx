@@ -1,14 +1,13 @@
 import React, {useState} from 'react'
 import Reviews from 'components/Reviews/Reviews';
 import Features from 'components/Features/Features';
-
 import { CiLocationOn } from "react-icons/ci";
 import { FaStar } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
 import styles from './camperModal.module.css';
 
- const CamperModal = ({showModal, onClose, item}) => {
-  // console.log(item)
+ const CamperModal = ({ onClose, item}) => {
+ 
 const { gallery, description,location, name, price, rating, reviews} = item;
 
   const [activeTab, setActiveTab] = useState('')
@@ -22,21 +21,21 @@ const { gallery, description,location, name, price, rating, reviews} = item;
         <div className={styles.titleClouse}>
         <h2>{name}</h2> 
         <button className={styles.modalClose} type="button" aria-label="Close modal" onClick={onClose}>
-        <RxCross2 />
+        <RxCross2 size={30}/>
         </button>
         </div>
 
-        {/* <div className={styles.locationPrice}> */}
+       
         <ul className={styles.wrapLocation}>
                 <li>
-                   <FaStar /> <span>{rating}({reviews.length} Reviews)</span>
+                   <FaStar color='#ffc531'size={16} /> <span>{rating}({reviews.length} Reviews)</span>
                 </li>
                 <li>
                     <CiLocationOn />  <span>{location}</span>
                 </li>
         </ul>
         <h2>{price},00</h2>
-       {/* </div> */}
+   
       </div>
 
       <div className={styles.wrapTextImg}>
@@ -54,11 +53,7 @@ const { gallery, description,location, name, price, rating, reviews} = item;
         {activeTab === 'tabReviews' && <div><Reviews item={item}/></div>}
 
       </div>
-    </>
-    
-    
-
-   
+    </> 
   )
 }
 export default CamperModal

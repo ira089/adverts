@@ -14,10 +14,7 @@ import { TbAutomaticGearbox, TbToolsKitchen2 } from "react-icons/tb";
 import { LuFuel } from "react-icons/lu"; 
 import { IoBedOutline } from "react-icons/io5";
 
-// import { LuTv } from "react-icons/lu";
-// <LuTv />
-// import { LuShowerHead } from "react-icons/lu";
-// <LuShowerHead />
+
 
  const CatalogItem = ({item}) => {
   // console.log(item)
@@ -71,7 +68,7 @@ import { IoBedOutline } from "react-icons/io5";
             </div>          
             <ul className={styles.wrapLocation}>
                 <li>
-                   <FaStar /> <span>{rating}({reviews.length} Reviews)</span>
+                   <FaStar color='#ffc531'size={16} /> <span>{rating}({reviews.length} Reviews)</span>
                 </li>
                 <li>
                     <CiLocationOn />  <span>{location}</span>
@@ -82,22 +79,22 @@ import { IoBedOutline } from "react-icons/io5";
         <p className={styles.wrapDescription}>{description}</p>
         <ul className={styles.wrapEquipment}>
             <li>
-                <BsPeople />  <span>{adults} adults</span>
+                <BsPeople size={20} />  <span>{adults} adults</span>
             </li>
             <li>
-                 <TbAutomaticGearbox />  <span>{transmission}</span>
+                 <TbAutomaticGearbox size={20}/>  <span>{transmission}</span>
             </li>
             <li>
-                 <LuFuel />  <span>{engine}</span>
+                 <LuFuel size={20} />  <span>{engine}</span>
             </li>
             <li>
-                <TbToolsKitchen2 />  <span>Kitchen</span>
+                <TbToolsKitchen2 size={20}/>  <span>Kitchen</span>
             </li>
             <li>
-                 <IoBedOutline />  <span>{details.beds} beds</span>
+                 <IoBedOutline size={20}/>  <span>{details.beds} beds</span>
             </li>
             <li>
-                 <FaWind />  <span>AC</span>
+                 <FaWind size={20}/>  <span>AC</span>
             </li>
         </ul>
         <Button  onClick={openModal}>Show more</Button>

@@ -1,10 +1,7 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-// import { RxCross2 } from "react-icons/rx";
 import styles from './modal.module.css';
-// import { Opacity, Modalcont, ModalClose } from './Modal.styled';
 
-// const Modal = ({ children, width, height, onClose, developers = false }) => {
     const Modal = ({ isOpen, onClose, children }) => { 
   const modalRoot = document.getElementById('modal-root');
 
@@ -20,21 +17,11 @@ import styles from './modal.module.css';
   if (!isOpen) return null;
   
   return createPortal(
-    <div 
-    // onClick={onClose} 
-    className={styles.modal}>
-        
-      <div className={styles.modalContent}
-        // $developers={developers}
-        // $Width={width}
-        // $Height={height}
-        // onClick={event => event.stopPropagation()}
-      >
-        {/* <button className={styles.modalClose} type="button" aria-label="Close modal" onClick={onClose}>
-        <RxCross2 />
-        </button> */}
+    <div> 
+      <div className={styles.modalContent}>
         {children}
       </div>
+      <div className={styles.modal} onClick={onClose}></div>
     </div>,
     modalRoot
   );
