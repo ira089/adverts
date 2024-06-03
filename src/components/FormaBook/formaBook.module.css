@@ -66,7 +66,8 @@ padding: 18px 18px 18px 18px;
 font-weight: 400;
 font-size: 16px;
 line-height: 125%;
-color: rgba(16, 24, 40, 0.6);
+/* color: rgba(16, 24, 40, 0.6); */
+color: #101828;
 margin-bottom: 10px;
 }
 
@@ -77,3 +78,37 @@ margin-bottom: 10px;
     font-size: 12px;
     color: red;  
 }
+
+label .inputPicker  {
+    width: 400px;
+    display: flex;
+    align-items: center; 
+    padding: 18px 18px 18px 18px;
+    background: transparent;
+    border: 1px solid blue;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 125%;
+    color: #101828; 
+    flex-grow: 1;
+}
+
+.inputPicker svg {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+
+/* .wrapCalendar {
+    position: relative; 
+}
+
+.btnCalendar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-50%, 50%);
+    opacity: 0.4;
+    background-color: transparent;
+    cursor: pointer;
+} */
