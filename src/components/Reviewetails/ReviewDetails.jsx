@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaStar} from "react-icons/fa6";
+import styles from './reviewDetails.module.css';
 
  const ReviewDetails = ({item}) => {
   const {reviews} = item;
@@ -20,7 +21,7 @@ import { FaStar} from "react-icons/fa6";
   const isReviews = Boolean(reviews.length);
 
   return (
-    <div>
+    <div className={styles.wrapReview}>
       {isReviews ? <ul >{elements}</ul> : <h2>There are no reviews for the selected camper</h2>}
     </div>
   )
