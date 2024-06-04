@@ -19,23 +19,17 @@ import Button from 'components/Button/Button';
 
   const [page, setPage] = useState(1)
   const [allItemsLoaded, setAllItemsLoaded] = useState(false)
-  const [paginatedItems, setPaginatedItems] = useState([])
- 
-  // console.log(paginatedItems) 
+  const [paginatedItems, setPaginatedItems] = useState([]) 
 
   useEffect(() => {
-    
     dispatch(camperOperations.getCampersThunk());
-   
   }, [dispatch]);
 
 
   
 
   useEffect(() => {
-    
     setPaginatedItems(items.slice(0, page * itemsPerPage))
-  
   }, [page,items])
   
 
