@@ -14,7 +14,7 @@ import Button from 'components/Button/Button';
   
 
   const { isLoading, error, items } = useSelector(camperSelectors.selectCampers);
-// console.log(items)
+
   
 
   const [page, setPage] = useState(1)
@@ -24,6 +24,7 @@ import Button from 'components/Button/Button';
   // console.log(paginatedItems) 
 
   useEffect(() => {
+    
     dispatch(camperOperations.getCampersThunk());
    
   }, [dispatch]);
