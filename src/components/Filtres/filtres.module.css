@@ -1,0 +1,22 @@
+.text {
+   
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: rgba(16, 24, 40, 0.6);
+    margin-bottom: 8px;
+}
+
+.input {
+border-radius: 10px;
+padding: 18px 218px 18px 18px;
+/* width: 360px;
+height: 56px; */
+background-color: #f7f7f7;
+font-weight: 400;
+font-size: 16px;
+line-height: 125%;
+color: #101828;
+border: none;
+margin-bottom: 32px;
+}

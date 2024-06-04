@@ -12,7 +12,8 @@ import Button from 'components/Button/Button';
 
   const dispatch = useDispatch();
 
-  const { isLoading, error, items } = useSelector(camperSelectors.selectCampers);
+  const { isLoading, error } = useSelector(camperSelectors.selectCampers);
+  
 
   const [page, setPage] = useState(1)
   const [allItemsLoaded, setAllItemsLoaded] = useState(false)
@@ -22,17 +23,33 @@ import Button from 'components/Button/Button';
     dispatch(camperOperations.getCampersThunk());
   }, [dispatch]);
 
+  // функции для фильтра
+  const itemsVisible = useSelector(camperSelectors.selectFilteredCamper);
+
   useEffect(() => {
-    setPaginatedItems(items.slice(0, page * itemsPerPage))
-  }, [page,items])
+    setPaginatedItems(itemsVisible.slice(0, page * itemsPerPage))
+  }, [page,itemsVisible])
   
   const onAddCamper = () => {
-    const allLoaded = items.length <= page * itemsPerPage
+    const allLoaded = itemsVisible.length <= page * itemsPerPage
     setAllItemsLoaded(allLoaded)
     if (!allLoaded) {
       setPage(page + 1)
     }
   }
+// ------------
+
+  // useEffect(() => {
+  //   setPaginatedItems(items.slice(0, page * itemsPerPage))
+  // }, [page,items])
+  
+  // const onAddCamper = () => {
+  //   const allLoaded = items.length <= page * itemsPerPage
+  //   setAllItemsLoaded(allLoaded)
+  //   if (!allLoaded) {
+  //     setPage(page + 1)
+  //   }
+  // }
 
   const isVariant = { variant: true};
   const elements = paginatedItems.map(item => (
