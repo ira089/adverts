@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/rentCamper/static/css/main.ea39a027.css",
-    "main.js": "/rentCamper/static/js/main.07c99a23.js",
+    "main.js": "/rentCamper/static/js/main.2a6adfff.js",
     "static/media/rent2-min.jpg": "/rentCamper/static/media/rent2-min.e0b8e09fe732d81680a9.jpg",
     "index.html": "/rentCamper/index.html",
     "main.ea39a027.css.map": "/rentCamper/static/css/main.ea39a027.css.map",
-    "main.07c99a23.js.map": "/rentCamper/static/js/main.07c99a23.js.map"
+    "main.2a6adfff.js.map": "/rentCamper/static/js/main.2a6adfff.js.map"
   },
   "entrypoints": [
     "static/css/main.ea39a027.css",
-    "static/js/main.07c99a23.js"
+    "static/js/main.2a6adfff.js"
   ]
 }
