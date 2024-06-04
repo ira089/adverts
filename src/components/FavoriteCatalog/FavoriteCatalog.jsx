@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 import * as camperSelectors from '../../redux/camperSelectors';
 // import * as camperOperations from '../../redux/camperOperations';
 import styles from '../CatalogList/CatalogList.module.css';
-import FavoriteItem  from '../FavoriteItem/FavoriteItem';
+// import FavoriteItem  from '../FavoriteItem/FavoriteItem';
+import CatalogItem from 'components/CatalogItem/CatalogItem';
 import Button from 'components/Button/Button';
 
  const FavoriteCatalog = () => {
@@ -41,10 +42,20 @@ setItemsFavorite(items.filter(el => el.favorite))
     }
   }
 
+  // const elements = paginatedItems.map(item => (
+  //   <FavoriteItem 
+  //     key={item.id}
+  //     item={item}
+      
+  //   />
+  // ));
+
+  const isVariant = { variant: false};
   const elements = paginatedItems.map(item => (
-    <FavoriteItem 
+    <CatalogItem 
       key={item.id}
       item={item}
+      isVariant={isVariant}
       
     />
   ));

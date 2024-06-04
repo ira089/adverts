@@ -50,12 +50,12 @@ import Button from 'components/Button/Button';
   }
 
   
-
+  const isVariant = { variant: true};
   const elements = paginatedItems.map(item => (
     <CatalogItem
       key={item.id}
       item={item}
-      
+      isVariant={isVariant}
     />
   ));
 

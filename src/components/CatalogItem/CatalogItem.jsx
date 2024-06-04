@@ -1,25 +1,18 @@
 import React, { useState } from 'react'
 import { useDispatch } from "react-redux";
-// import * as camperSelectors from '../../redux/camperSelectors';
 import * as camperOperations from '../../redux/camperOperations';
 import Button from 'components/Button/Button';
 import Modal from 'components/Modal/Modal';
 import CamperModal from '../CamperModal/CamperModal'
 import styles from './catalogItem.module.css';
-import { FaRegHeart, FaWind } from "react-icons/fa";
+import EqupmentIcon from '../EqupmentIcon/EqupmentIcon'
+import { FaRegHeart } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
 import { FaStar, FaHeart } from "react-icons/fa6";
-import { BsPeople } from "react-icons/bs";
-import { TbAutomaticGearbox, TbToolsKitchen2 } from "react-icons/tb";
-import { LuFuel } from "react-icons/lu"; 
-import { IoBedOutline } from "react-icons/io5";
 
-
-
- const CatalogItem = ({item}) => {
-  // console.log(item)
-    // const [showModal, setShowModal] = useState(false);
-    // const toggleModal = () => setShowModal(prevShowModal => !prevShowModal)
+ const CatalogItem = ({item, isVariant}) => {
+  const {variant} = isVariant
+//  console.log(variant)
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => {
     setIsModalOpen(true);
@@ -29,40 +22,29 @@ import { IoBedOutline } from "react-icons/io5";
   };
 
   const dispatch = useDispatch();
-  // const [isActive, setIsActive] = useState(false);
-  // const handleClick = () => {
-  //   setIsActive(!isActive);
-  //   if (!item.favorite){
-  //     const toggleItem = {...item, favorite: true}
-  //     dispatch(camperOperations.toggleFavoritesThunk(toggleItem))
-  //   }else {} 
-  // };
 
   const handleClick = () =>  dispatch(camperOperations.toggleFavoritesThunk(item))
 
-  
-
- const {adults, id, details, gallery, description,
-  location, name, price, rating, reviews, transmission, engine, favorite} = item;
+const {id, gallery, description, location, name, price, rating, reviews, favorite} = item;
  const image = gallery[0];
-//  console.log(gallery)
-//  console.log(image);
-//  console.log(details)
+
   return (
     <>
      <li key={id} id={id} className={styles.wrapItem}>
        <img src={image} alt={name} className={styles.img}/>
     <div className={styles.wrapText}>
-      {/* весь текст */}
+    
        <div className={styles.wrapTitle}>
-        {/* название цена локация отзывы */}
+       
             <div className={styles.title}>
                 <h2>{name}</h2> 
                 <div className={styles.wrapPrice}>
                     <h2>{price},00</h2>
+
+                    {variant && 
                     <button className={styles.btnHeart}  onClick={handleClick} type='submit'>
                     {favorite ?  <FaHeart className={styles.heartActive}/> :  <FaRegHeart className={styles.heart}/>}
-                    </button>       
+                    </button> }
                 </div>
 
             </div>          
@@ -78,31 +60,16 @@ import { IoBedOutline } from "react-icons/io5";
         </div>
         <p className={styles.wrapDescription}>{description}</p>
         <ul className={styles.wrapEquipment}>
-            <li>
-                <BsPeople size={20} />  <span>{adults} adults</span>
-            </li>
-            <li>
-                 <TbAutomaticGearbox size={20}/>  <span>{transmission}</span>
-            </li>
-            <li>
-                 <LuFuel size={20} />  <span>{engine}</span>
-            </li>
-            <li>
-                <TbToolsKitchen2 size={20}/>  <span>Kitchen</span>
-            </li>
-            <li>
-                 <IoBedOutline size={20}/>  <span>{details.beds} beds</span>
-            </li>
-            <li>
-                 <FaWind size={20}/>  <span>AC</span>
-            </li>
+          <EqupmentIcon item={item}/>
+
         </ul>
+        
         <Button  onClick={openModal}>Show more</Button>
 
     </div>
 
     </li>
-    {/* {showModal && (<Modal showModal={setShowModal} onClose={() => showModal(false)}/>)} */}
+    
     <Modal isOpen={isModalOpen}
      onClose={closeModal}>
        <CamperModal item={item} onClose={closeModal}/>
