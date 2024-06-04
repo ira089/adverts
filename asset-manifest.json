@@ -1,14 +1,28 @@
 {
   "files": {
-    "main.css": "/rentCamper/static/css/main.ea39a027.css",
-    "main.js": "/rentCamper/static/js/main.47370935.js",
+    "main.css": "/rentCamper/static/css/main.ae57b348.css",
+    "main.js": "/rentCamper/static/js/main.68c1cdba.js",
+    "static/css/457.9c8d4e1c.chunk.css": "/rentCamper/static/css/457.9c8d4e1c.chunk.css",
+    "static/js/457.8ff830c4.chunk.js": "/rentCamper/static/js/457.8ff830c4.chunk.js",
+    "static/css/485.7fe8037e.chunk.css": "/rentCamper/static/css/485.7fe8037e.chunk.css",
+    "static/js/485.0d5ce766.chunk.js": "/rentCamper/static/js/485.0d5ce766.chunk.js",
+    "static/css/736.097ea68a.chunk.css": "/rentCamper/static/css/736.097ea68a.chunk.css",
+    "static/js/736.6ced87bb.chunk.js": "/rentCamper/static/js/736.6ced87bb.chunk.js",
+    "static/js/908.761b4b62.chunk.js": "/rentCamper/static/js/908.761b4b62.chunk.js",
     "static/media/rent2-min.jpg": "/rentCamper/static/media/rent2-min.e0b8e09fe732d81680a9.jpg",
     "index.html": "/rentCamper/index.html",
-    "main.ea39a027.css.map": "/rentCamper/static/css/main.ea39a027.css.map",
-    "main.47370935.js.map": "/rentCamper/static/js/main.47370935.js.map"
+    "main.ae57b348.css.map": "/rentCamper/static/css/main.ae57b348.css.map",
+    "main.68c1cdba.js.map": "/rentCamper/static/js/main.68c1cdba.js.map",
+    "457.9c8d4e1c.chunk.css.map": "/rentCamper/static/css/457.9c8d4e1c.chunk.css.map",
+    "457.8ff830c4.chunk.js.map": "/rentCamper/static/js/457.8ff830c4.chunk.js.map",
+    "485.7fe8037e.chunk.css.map": "/rentCamper/static/css/485.7fe8037e.chunk.css.map",
+    "485.0d5ce766.chunk.js.map": "/rentCamper/static/js/485.0d5ce766.chunk.js.map",
+    "736.097ea68a.chunk.css.map": "/rentCamper/static/css/736.097ea68a.chunk.css.map",
+    "736.6ced87bb.chunk.js.map": "/rentCamper/static/js/736.6ced87bb.chunk.js.map",
+    "908.761b4b62.chunk.js.map": "/rentCamper/static/js/908.761b4b62.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ea39a027.css",
-    "static/js/main.47370935.js"
+    "static/css/main.ae57b348.css",
+    "static/js/main.68c1cdba.js"
   ]
 }
