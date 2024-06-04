@@ -4,7 +4,7 @@ import styles from './homePage.module.css';
 const Home = () => {
   return (
     <div className={styles.wrap}>
-      <h1>What do you get by renting a motorhome?</h1>
+      <h1>What do you get by renting a camper?</h1>
 
       <ul>
         <li>unlimited mileage;</li>

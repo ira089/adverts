@@ -38,7 +38,7 @@ const {id, gallery, description, location, name, price, rating, reviews, favorit
             <div className={styles.title}>
                 <h2>{name}</h2> 
                 <div className={styles.wrapPrice}>
-                    <h2>{price},00</h2>
+                    <h2>€{price},00</h2>
 
                     {variant && 
                     <button className={styles.btnHeart}  onClick={handleClick} type='submit'>
@@ -49,10 +49,10 @@ const {id, gallery, description, location, name, price, rating, reviews, favorit
             </div>          
             <ul className={styles.wrapLocation}>
                 <li>
-                   <FaStar color='#ffc531'size={16} /> <span>{rating}({reviews.length} Reviews)</span>
+                   <FaStar color='#ffc531'size={16} /> <span className={styles.review}>{rating}({reviews.length} Reviews)</span>
                 </li>
                 <li>
-                    <CiLocationOn />  <span>{location}</span>
+                    <CiLocationOn size={16}/><span >{location}</span>
                 </li>
             </ul>
            
