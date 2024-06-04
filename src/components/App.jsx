@@ -1,17 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
-// import { lazy } from 'react';
+import { lazy } from 'react';
 import React from 'react';
 import Home from '../Pages/HomePage/Home';
 import  Layout  from '../Pages/Layout/Layout';
-import CatalogPage from 'Pages/CatalogPage/CatalogPage';
-import FavoritesPage from 'Pages/FavoritesPage/FavoritesPage';
-import NotFoundPage from 'Pages/NotFoundPage/NotFoundPage';
 
-// const MovieDetails = lazy(() => import('./MovieDetails/MovieDetails'));
-// const CastPage = lazy(() => import('Pages/Cast/CastPage'));
-// const ReviewsPage = lazy(() => import('Pages/Reviews/ReviewsPage'));
-// const MoviesPage = lazy(() => import('Pages/Movies/MoviesPage'));
-// const NotFoundPage = lazy(() => import('../Pages/NotFoundPage/NotFoundPage'));
+const CatalogPage = lazy(() => import('../Pages/CatalogPage/CatalogPage'));
+const FavoritesPage = lazy(() => import('../Pages/FavoritesPage/FavoritesPage'))
 
 const App = () => {
   return (
@@ -22,11 +16,7 @@ const App = () => {
         <Route path="/catalog" element={<CatalogPage />} >
           </Route>
           <Route path="/favorites" element={<FavoritesPage />} />
-        {/* <Route path="/movies/:id" element={<MovieDetails />}>
-          <Route path="cast" element={<CastPage />} />
-          <Route path="reviews" element={<ReviewsPage />} />
-        </Route> */}
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="*" element={<Home />}/>
       </Route>
     </Routes>
   );

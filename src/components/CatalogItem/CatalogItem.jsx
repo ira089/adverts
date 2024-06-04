@@ -12,7 +12,6 @@ import { FaStar, FaHeart } from "react-icons/fa6";
 
  const CatalogItem = ({item, isVariant}) => {
   const {variant} = isVariant
-//  console.log(variant)
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => {
     setIsModalOpen(true);

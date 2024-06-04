@@ -11,8 +11,7 @@ import Button from 'components/Button/Button';
   const itemsPerPage = 4
  
   const { isLoading, error, items } = useSelector(camperSelectors.selectCampers);
-// console.log(items)
-// console.log(isLoading)
+
 const dispatch = useDispatch();
 useEffect(() => {
   dispatch(camperOperations.getCampersThunk());
@@ -23,15 +22,10 @@ useEffect(() => {
   const [paginatedItems, setPaginatedItems] = useState([]) 
   const [itemsFavorite, setItemsFavorite] = useState([]) 
 
-  console.log(items)
-  console.log(itemsFavorite)
-  console.log(paginatedItems)
-
   useEffect(() => {
 setItemsFavorite(items.filter(el => el.favorite))
   }, [items]);
 
-  
   useEffect(() => {
       const allLoaded = itemsFavorite.length <= page * itemsPerPage
      setAllItemsLoaded(allLoaded)
@@ -43,9 +37,6 @@ setItemsFavorite(items.filter(el => el.favorite))
       setPage(page + 1)
     }
   }
-
-  
-console.log(paginatedItems)
 
   const isVariant = { variant: false};
   const elements = paginatedItems.map(item => (

@@ -11,11 +11,8 @@ import Button from 'components/Button/Button';
   const itemsPerPage = 4
 
   const dispatch = useDispatch();
-  
 
   const { isLoading, error, items } = useSelector(camperSelectors.selectCampers);
-
-  
 
   const [page, setPage] = useState(1)
   const [allItemsLoaded, setAllItemsLoaded] = useState(false)
@@ -25,26 +22,18 @@ import Button from 'components/Button/Button';
     dispatch(camperOperations.getCampersThunk());
   }, [dispatch]);
 
-
-  
-
   useEffect(() => {
     setPaginatedItems(items.slice(0, page * itemsPerPage))
   }, [page,items])
   
-
   const onAddCamper = () => {
     const allLoaded = items.length <= page * itemsPerPage
-
     setAllItemsLoaded(allLoaded)
-
     if (!allLoaded) {
       setPage(page + 1)
     }
-    
   }
 
-  
   const isVariant = { variant: true};
   const elements = paginatedItems.map(item => (
     <CatalogItem
@@ -57,14 +46,12 @@ import Button from 'components/Button/Button';
   const isItems = Boolean(paginatedItems.length);
 
   return (
-    <div>
+  <div>
     {isLoading && <p>...Loading</p>}
     {error && <p>{error.message}</p>}
     {isItems && <ul className={styles.list}>{elements}</ul>}
     {!allItemsLoaded && <Button onClick={() => onAddCamper()}>Load more</Button>}
-    
   </div>
-    
   )
 }
 
