@@ -16,6 +16,16 @@ const EqupmentDetailsIcon = ({item}) => {
         radio, shower, toilet, water} = details;
 
     const isCd = Boolean(CD);
+    const isTv = Boolean(TV);
+    const isAirConditioner = Boolean(airConditioner);
+    const isFreezer = Boolean(freezer);
+    const isGas = Boolean(gas);
+    const isHob = Boolean(hob);
+    const isMicrowave = Boolean(microwave);
+    const isRadio = Boolean(radio);
+    const isShower = Boolean(shower);
+    const isToilet = Boolean(toilet);
+    const isWater = Boolean(water);
 
   return (
     <>
@@ -23,43 +33,43 @@ const EqupmentDetailsIcon = ({item}) => {
             <li className={styles.equipmentItem}>
                  <LiaCompactDiscSolid size={20}/>  <span>CD</span>
             </li>}
-            {TV && 
+            {isTv && 
             <li className={styles.equipmentItem}>
                  <LuTv size={20}/>  <span>TV</span>
             </li>}
-            {airConditioner && 
+            {isAirConditioner && 
             <li className={styles.equipmentItem}>
                  <TbAirConditioning size={20}/>  <span>{airConditioner} Air conditioner</span>
             </li>}
-            {freezer && 
+            {isFreezer && 
             <li className={styles.equipmentItem}>
                  <RiFridgeLine size={20}/>  <span>Freezer</span>
             </li>}
-            {gas && 
+            {isGas && 
             <li className={styles.equipmentItem}>
                  <HiFire size={20}/>  <span>Gas</span>
             </li>}
-            {hob && 
+            {isHob && 
             <li className={styles.equipmentItem}>
                  <GiHobbitDwelling size={20}/>  <span>{hob} hob</span>
             </li>}
-            {microwave && 
+            {isMicrowave && 
             <li className={styles.equipmentItem}>
                  <MdMicrowave size={20}/>  <span>Microwave</span>
             </li>}
-            {radio && 
+            {isRadio && 
             <li className={styles.equipmentItem}>
                  <BiRadio size={20}/>  <span>Radio</span>
             </li>}
-            {shower && 
+            {isShower && 
             <li className={styles.equipmentItem}>
                  <LuShowerHead size={20}/>  <span>Shower</span>
             </li>}
-            {toilet && 
+            {isToilet && 
             <li className={styles.equipmentItem}>
                  <TbToiletPaper size={20}/>  <span>Toilet</span>
             </li>}
-            {water && 
+            {isWater && 
             <li className={styles.equipmentItem}>
                  <IoWaterOutline size={20}/>  <span>Water</span>
             </li>}

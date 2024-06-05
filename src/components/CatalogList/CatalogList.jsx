@@ -12,37 +12,8 @@ import Button from 'components/Button/Button';
 
   const dispatch = useDispatch();
 
-  const { isLoading, error,items } = useSelector(camperSelectors.selectCampers);
-  console.log(items)
-
-
- const filter = {
-  loc: 'location',
-  cd: 'CD',
-  shower: 'shower'
- }
-console.log(filter['loc'])
-
- const filterItems = (items, filter) => {
-  return items.filter(item => {
-    for (const key in filter) {
-      if (filter.hasOwnProperty(key)) {
-        if (item.details[key] === 0) {
-          return false;
-        }
-
-      }
-    }
-    return true;
-  });
-};
-
-const filteredItems = filterItems(items, filter);
-console.log(filteredItems)
-
-
-
-
+  const { isLoading, error } = useSelector(camperSelectors.selectCampers);
+ 
   const [page, setPage] = useState(1)
   const [allItemsLoaded, setAllItemsLoaded] = useState(false)
   const [paginatedItems, setPaginatedItems] = useState([]) 
@@ -51,9 +22,6 @@ console.log(filteredItems)
     dispatch(camperOperations.getCampersThunk());
   }, [dispatch]);
 
-
-
-  // функции для фильтра
   const itemsVisible = useSelector(camperSelectors.selectFilteredCamper);
 
   useEffect(() => {
@@ -67,19 +35,6 @@ console.log(filteredItems)
       setPage(page + 1)
     }
   }
-// ------------
-
-  // useEffect(() => {
-  //   setPaginatedItems(items.slice(0, page * itemsPerPage))
-  // }, [page,items])
-  
-  // const onAddCamper = () => {
-  //   const allLoaded = items.length <= page * itemsPerPage
-  //   setAllItemsLoaded(allLoaded)
-  //   if (!allLoaded) {
-  //     setPage(page + 1)
-  //   }
-  // }
 
   const isVariant = { variant: true};
   const elements = paginatedItems.map(item => (
@@ -96,7 +51,7 @@ console.log(filteredItems)
   <div >
     {isLoading && <p>...Loading</p>}
     {error && <p>{error.message}</p>}
-    {isItems && <ul >{elements}</ul>}
+    {isItems && <ul className={styles.list}>{elements}</ul>}
     {!allItemsLoaded && 
     <div className={styles.btnLoadMore}> 
       <Button  onClick={() => onAddCamper()}>Load more</Button>

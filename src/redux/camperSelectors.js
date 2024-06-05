@@ -8,14 +8,40 @@ export const selectFilteredCamper = state => {
     if (!filterState) {
       return items;
     }
-    // const normalizedFilter = filterState.toLowerCase();
-    const normalizedFilter = filterState.location.toLowerCase()
-    // return items.filter(camper =>
-    //   camper.location.toLocaleLowerCase().includes(normalizedFilter)
-    // );
-    const itemsLocationFilter = items.filter(camper =>
-        camper.location.toLocaleLowerCase().includes(normalizedFilter))
-        const itemsAcFilter = itemsLocationFilter.filter(camper =>
-          camper.details.airConditioner > 0)
-          return itemsAcFilter
+
+    if(filterState.location) {
+      const normalizedFilter = filterState.location.toLowerCase();
+      const itemsLocationFilter = items.filter(camper =>
+          camper.location.toLocaleLowerCase().includes(normalizedFilter));
+          const filteredItems = filterItems(itemsLocationFilter, filterState);
+          return filteredItems;
+    }
+    const filteredItems = filterItems(items, filterState);
+          return filteredItems;  
   };
+
+  function filterItems(items, filter) {
+    return items.filter(item => {
+          for (const key in filter) {
+            if (filter[key]) {
+              if (item.details[key] === 0) {
+                return false;
+             }
+           }
+         }
+         return true;
+        });
+  }
+
+  // const filter = {
+  //   loc: 'location',
+  //   cd: 'CD',
+  //   shower: 'shower'
+  //  }
+  // console.log(filter['loc'])
+  
+ 
+  
+  // const filteredItems = filterItems(items, filter);
+  // console.log(filteredItems)
+  

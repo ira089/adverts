@@ -1,3 +1,6 @@
+.list {
+padding: 0;
+}
 
 .btnLoadMore button {
 color: #101828;
@@ -8,6 +11,5 @@ margin-left: 30%;
 }
 
 .btnLoadMore button:hover {
-    border: 1px solid  #D84343;
     background-color: transparent;
   }

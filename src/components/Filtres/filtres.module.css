@@ -1,5 +1,4 @@
 .text {
-   
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
@@ -10,8 +9,6 @@
 .input {
 border-radius: 10px;
 padding: 18px 218px 18px 18px;
-/* width: 360px;
-height: 56px; */
 background-color: #f7f7f7;
 font-weight: 400;
 font-size: 16px;
@@ -33,8 +30,7 @@ line-height: 120%;
 color: #101828;
 padding-bottom: 23px;
 margin-bottom: 24px;
-/* border-bottom: 1px solid  #f7f7f7; */
-border-bottom: 1px solid  blue;
+border-bottom: 1px solid  #f7f7f7;
 }
 
 .wrapCheckbox {
@@ -43,16 +39,12 @@ border-bottom: 1px solid  blue;
     gap: 10px;
 }
 
-.checkbox {
-    width: 112px;
-}
+
 
 .checkbox, .radio{
-    /* border: 1px solid #f2f4f7; */
-    border: 1px solid green;
+    border: 1px solid #f2f4f7;
     border-radius: 10px;
-    padding: 7px 24px;
-    
+    width:30%;
     height: 95px;
     mix-blend-mode: multiply;
 display: flex;
@@ -68,11 +60,11 @@ color: #101828;
 background-color: transparent;
 }
 
-.checkbox, .radio:hover{
+.checkbox:hover, .radio:hover{
     border: 1px solid #D84343; 
 }
 
-.checkbox, .radio:active{
+.checkbox:hover, .radio:active{
     border: 1px solid #D84343; 
 }
 

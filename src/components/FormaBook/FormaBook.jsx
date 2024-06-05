@@ -5,7 +5,6 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import  bookShema  from '../schemas/bookShema';
 import Button from 'components/Button/Button';
-// import { LuCalendar } from "react-icons/lu";
 import CustomInput from '../CustomInput/CuctomInput'
 import styles from './formaBook.module.css';
 
@@ -26,9 +25,6 @@ export const FormaBook = () => {
     mode: "onBlur",
     resolver:yupResolver(bookShema)
   })
-
-
-  
 
   return (
     <div className={styles.wrapBook}>
@@ -55,43 +51,24 @@ export const FormaBook = () => {
              {errors?.email && (<span className={styles.span}>{errors?.email?.message || 'Errors!'}</span>)}
           </label>
 
-          <label className={styles.label} >
-
-            {/* <div className={styles.wrapCalendar}> */}
-              {/* <input  className={styles.input}/> */}
-              
-             
-                
+          <label className={styles.label} > 
                 <Controller 
                  name="date"
                 control={control}
                 render={({ field }) => (
-               <DatePicker 
-              
-              //  showIcon
-                // placeholderText="Booking date"
+               <DatePicker
                 selected={field.value}
                 onChange={field.onChange}
                 dateFormat="yyyy-MM-dd"
-               
                 customInput={<CustomInput />}
-                
                 />
                  )}
                />
-                {/* <button  className={styles.btnCalendar}>
-               <LuCalendar/>
-
-              </button> */}
-            {/* </div> */}
+               
             {errors?.date && (<span className={styles.span}>{errors?.date?.message || 'Errors!'}</span>)}
-            
               
           </label>
-
-        
-            
-          
+      
               <label className={styles.label}>
             <textarea className={styles.textarea}
             {...register('comment') }
