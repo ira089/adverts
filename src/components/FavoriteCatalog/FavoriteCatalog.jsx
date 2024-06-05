@@ -51,11 +51,14 @@ setItemsFavorite(items.filter(el => el.favorite))
   const isItems = Boolean(paginatedItems.length);
 
   return (
-    <div>
+  <div>
     {isLoading && <p>...Loading</p>}
     {error && <p>{error.message}</p>}
-    {isItems ? <ul className={styles.list}>{elements}</ul> : <h2>you don't have any favorites</h2>}
-    {!allItemsLoaded && <Button onClick={() => onAddCamper()}>Load more</Button>}
+    {isItems ? <ul>{elements}</ul> : <h2>you don't have any favorites</h2>}
+    {!allItemsLoaded && 
+    <div className={styles.btnLoadMore}> 
+      <Button  onClick={() => onAddCamper()}>Load more</Button>
+    </div>}
   </div>
     
   )

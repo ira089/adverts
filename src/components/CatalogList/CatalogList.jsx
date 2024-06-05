@@ -63,11 +63,14 @@ import Button from 'components/Button/Button';
   const isItems = Boolean(paginatedItems.length);
 
   return (
-  <div>
+  <div >
     {isLoading && <p>...Loading</p>}
     {error && <p>{error.message}</p>}
-    {isItems && <ul className={styles.list}>{elements}</ul>}
-    {!allItemsLoaded && <Button onClick={() => onAddCamper()}>Load more</Button>}
+    {isItems && <ul >{elements}</ul>}
+    {!allItemsLoaded && 
+    <div className={styles.btnLoadMore}> 
+      <Button  onClick={() => onAddCamper()}>Load more</Button>
+    </div>}
   </div>
   )
 }

@@ -1,4 +1,13 @@
-/* .list {
-width: 888px;
-height: 1528px;
-} */
+
+.btnLoadMore button {
+color: #101828;
+border: 1px solid rgba(71, 84, 103, 0.2);
+padding: 16px 32px;
+background-color: transparent;
+margin-left: 30%;  
+}
+
+.btnLoadMore button:hover {
+    border: 1px solid  #D84343;
+    background-color: transparent;
+  }
