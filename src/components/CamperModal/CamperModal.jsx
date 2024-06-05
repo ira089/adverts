@@ -28,7 +28,7 @@ const { gallery, description,location, name, price, rating, reviews} = item;
        
         <ul className={styles.wrapLocation}>
                 <li>
-                   <FaStar color='#ffc531'size={16} /> <span>{rating}({reviews.length} Reviews)</span>
+                   <FaStar color='#ffc531'size={16} /> <span className={styles.review}>{rating}({reviews.length} Reviews)</span>
                 </li>
                 <li>
                     <CiLocationOn />  <span>{location}</span>
