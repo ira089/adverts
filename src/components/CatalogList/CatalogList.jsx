@@ -12,8 +12,36 @@ import Button from 'components/Button/Button';
 
   const dispatch = useDispatch();
 
-  const { isLoading, error } = useSelector(camperSelectors.selectCampers);
-  
+  const { isLoading, error,items } = useSelector(camperSelectors.selectCampers);
+  console.log(items)
+
+
+ const filter = {
+  loc: 'location',
+  cd: 'CD',
+  shower: 'shower'
+ }
+console.log(filter['loc'])
+
+ const filterItems = (items, filter) => {
+  return items.filter(item => {
+    for (const key in filter) {
+      if (filter.hasOwnProperty(key)) {
+        if (item.details[key] === 0) {
+          return false;
+        }
+
+      }
+    }
+    return true;
+  });
+};
+
+const filteredItems = filterItems(items, filter);
+console.log(filteredItems)
+
+
+
 
   const [page, setPage] = useState(1)
   const [allItemsLoaded, setAllItemsLoaded] = useState(false)
@@ -22,6 +50,8 @@ import Button from 'components/Button/Button';
   useEffect(() => {
     dispatch(camperOperations.getCampersThunk());
   }, [dispatch]);
+
+
 
   // функции для фильтра
   const itemsVisible = useSelector(camperSelectors.selectFilteredCamper);
