@@ -72,7 +72,7 @@ evt.target[3].checked = false;
           </label>
 
           <label className={styles.checkbox}>
-            <input type='checkbox' name="shower" value='shower' hidden/>
+            <input  type='checkbox' name="shower" value='shower' hidden/>
              <LuShowerHead size={32}/> 
              <span>Shower/WC</span>
           </label>

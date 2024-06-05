@@ -64,9 +64,11 @@ background-color: transparent;
     border: 1px solid #D84343; 
 }
 
-.checkbox:hover, .radio:active{
+
+.checkbox:active, .radio:active{
     border: 1px solid #D84343; 
 }
+
 
 
 
