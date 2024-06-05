@@ -1,20 +1,12 @@
 .customInput {
     display: flex;
     align-items: center;
-   
-    
-
     width: 400px;
-     
     padding: 18px 18px 18px 18px;
-    background: transparent;
-    border: 1px solid blue;
+    background-color: #F7F7F7;
+    border: transparent;
     border-radius: 10px;
-    /* font-weight: 400;
-    font-size: 16px;
-    line-height: 125%;
-    color: #101828;  */
-    /* flex-grow: 1; */
+    
   }
   
   .customInput input {

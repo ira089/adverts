@@ -32,12 +32,6 @@ import {
         .addCase(camperOperations.getCampersThunk.pending, handlePending)
         .addCase(camperOperations.getCampersThunk.fulfilled, handleFulfilledGet)
         .addCase(camperOperations.getCampersThunk.rejected, handleRejected)
-        // .addCase(addContactsThunk.pending, handlePending)
-        // .addCase(addContactsThunk.fulfilled, handleFulfilledAdd)
-        // .addCase(addContactsThunk.rejected, handleRejected)
-        // .addCase(deleteContactsThunk.pending, handlePending)
-        // .addCase(deleteContactsThunk.fulfilled, handleFulfilledDel)
-        // .addCase(deleteContactsThunk.rejected, handleRejected)
         .addCase(camperOperations.toggleFavoritesThunk.pending, handlePending)
         .addCase(camperOperations.toggleFavoritesThunk.fulfilled, handleFulfilledToggle)
         .addCase(camperOperations.toggleFavoritesThunk.rejected, handleRejected);

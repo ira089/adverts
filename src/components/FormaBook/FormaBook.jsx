@@ -77,12 +77,15 @@ export const FormaBook = () => {
               type="text"
             />
              
-          </label>       
-         
-          <Button type="submit"
+          </label> 
+          <div className={styles.btn}>
+            <Button type="submit"
             disabled={!isValid}> 
               Send
-          </Button>
+            </Button>
+          </div>      
+         
+          
         </form>
 
     </div>

@@ -33,15 +33,4 @@ export const selectFilteredCamper = state => {
         });
   }
 
-  // const filter = {
-  //   loc: 'location',
-  //   cd: 'CD',
-  //   shower: 'shower'
-  //  }
-  // console.log(filter['loc'])
-  
- 
-  
-  // const filteredItems = filterItems(items, filter);
-  // console.log(filteredItems)
   
