@@ -39,12 +39,18 @@ border-bottom: 1px solid  #f7f7f7;
     gap: 10px;
 }
 
+.label {
+   
+    width:30%;
+
+}
+
 
 
 .checkbox, .radio{
     border: 1px solid #f2f4f7;
     border-radius: 10px;
-    width:30%;
+    /* width:30%; */
     height: 95px;
     mix-blend-mode: multiply;
 display: flex;
@@ -60,13 +66,12 @@ color: #101828;
 background-color: transparent;
 }
 
-.checkbox:hover, .radio:hover{
-    border: 1px solid #D84343; 
+.checkboxInput:checked + .checkbox {
+    border: 1px solid #D84343;   
 }
 
-
-.checkbox:active, .radio:active{
-    border: 1px solid #D84343; 
+.checkboxInput:checked + .radio {
+    border: 1px solid #D84343;   
 }
 
 

@@ -47,34 +47,44 @@ evt.target[3].checked = false;
       <div className={styles.wrapEquipment}>
          <h3 className={styles.title}>Vehicle equipment</h3>
          <div className={styles.wrapCheckbox}>
-          <label className={styles.checkbox}>
-            <input type='checkbox' name="airConditioner" value='airConditioner' hidden/>
-             <FaWind size={32}/> 
-             <span>AC</span>
+          <label className={styles.label} >
+            <input className={styles.checkboxInput} type='checkbox' name="airConditioner" value='airConditioner' hidden/>
+            <div className={styles.checkbox}>
+              <FaWind size={32}/> 
+               <span>AC</span>
+            </div>
           </label>
 
-          <label className={styles.checkbox}>
-            <input type='checkbox' name="transmission" value='transmission' hidden/>
-             <TbAutomaticGearbox size={32}/> 
-             <span>Automatic</span>
+          <label className={styles.label}>
+            <input className={styles.checkboxInput} type='checkbox' name="transmission" value='transmission' hidden/>
+            <div className={styles.checkbox}>
+              <TbAutomaticGearbox size={32}/> 
+              <span>Automatic</span>
+            </div>    
           </label>
 
-          <label className={styles.checkbox}>
-            <input type='checkbox' name="kitchen" value='kitchen' hidden/>
-             <TbToolsKitchen2 size={32}/> 
-             <span>Kitchen</span>
+          <label className={styles.label}>
+            <input className={styles.checkboxInput} type='checkbox' name="kitchen" value='kitchen' hidden/>
+            <div className={styles.checkbox}>
+              <TbToolsKitchen2 size={32}/> 
+               <span>Kitchen</span> 
+            </div>  
           </label>
 
-          <label className={styles.checkbox}>
-            <input type='checkbox' name="TV" value='TV' hidden/>
-             <LuTv size={32}/> 
-             <span>TV</span>
+          <label className={styles.label}>
+            <input className={styles.checkboxInput} type='checkbox' name="TV" value='TV' hidden/>
+            <div className={styles.checkbox}>
+               <LuTv size={32}/> 
+               <span>TV</span>
+            </div>
           </label>
 
-          <label className={styles.checkbox}>
-            <input  type='checkbox' name="shower" value='shower' hidden/>
-             <LuShowerHead size={32}/> 
-             <span>Shower/WC</span>
+          <label className={styles.label}>
+            <input className={styles.checkboxInput} type='checkbox' name="shower" value='shower' hidden/>
+            <div className={styles.checkbox}>
+              <LuShowerHead size={32}/> 
+              <span>Shower/WC</span>
+            </div>
           </label>
 
           </div>
@@ -83,22 +93,28 @@ evt.target[3].checked = false;
       <div className={styles.wrapEquipment}>
         <h3 className={styles.title}>Vehicle type</h3>
         <div className={styles.wrapCheckbox}>
-          <label className={styles.radio}>
-            <input type='radio'  hidden/>
+          <label className={styles.label}>
+            <input className={styles.checkboxInput} type='radio' name='vehicleType'  hidden/>
+            <div className={styles.radio}>
               <Icon width={40} height={28} name={"icon-ButtonO"}/>
               <span>Van</span>
+            </div>
           </label>
 
-          <label className={styles.radio}>
-            <input type='radio'  hidden/>
+          <label className={styles.label}>
+            <input className={styles.checkboxInput} type='radio' name='vehicleType'  hidden/>
+            <div className={styles.radio}>
               <Icon width={40} height={28} name={"icon-Button-O1"}/>
               <span>Fully <br/>Integrated</span>
+            </div>
           </label>
 
-          <label className={styles.radio}>
-            <input type='radio'  hidden/>
+          <label className={styles.label}>
+            <input className={styles.checkboxInput} type='radio' name='vehicleType'  hidden/>
+            <div className={styles.radio}>
               <Icon width={40} height={28} name={"icon-ButtonO-2"}/>
               <span>Alcove</span>
+            </div>
           </label>
            
         </div>
